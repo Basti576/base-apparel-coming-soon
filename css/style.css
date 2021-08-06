@@ -1,0 +1,231 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body{
+    height:100vh;
+    max-height:100vh;
+    overflow-y: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    background-image:linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "left-column right-column";
+    max-height:100vh;
+    height: 100vh;
+    
+}
+
+
+/*----Styling Left Column----*/
+.wrapper-left-column{
+    grid-area:left-column;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+.logo{
+    margin: 3rem 0 5rem 0;
+    width: 50%;
+    
+}
+
+.mobile-logo{
+    display:none;
+}
+
+.main-text{
+    text-align: justify;
+    
+    
+}
+
+.main-text h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+    color: hsl(0, 6%, 24%);
+    width: 50%;
+    margin: auto
+}
+
+.main-text #pink{
+    color:hsl(0, 36%, 70%);
+    font-weight: 100;
+}
+
+.main-article{
+    line-height: 2rem;
+    color:hsl(0, 36%, 70%);
+    font-weight: bold;
+    width: 50%;
+    margin: auto;
+    margin-top:2rem;
+}
+
+.email-form{
+    display:flex;
+    height:3rem;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    position:relative;
+    margin-top:4rem;
+}
+
+#email-input{
+    width:100%;
+    border-radius:1rem;
+    box-shadow: none;
+    border:1px solid hsl(0, 36%, 70%);
+    border-right:none;
+    padding:1rem;
+    color:hsl(0, 36%, 70%);;
+}
+
+.email-arrow-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    background-image:linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius:4rem;
+    border:none;
+    position: absolute;
+    right: 0;
+    padding: 0rem 2.5rem 0rem 2.5rem;
+    margin-right: -15px;
+   
+    
+}
+
+
+.email-arrow-button:hover{
+    box-shadow: 0px 5px 15px hsl(0, 36%, 70%);
+    cursor: pointer;
+    transition: all 0.15 ease-in-out;
+}
+
+/*----Styling right Column----*/
+
+.wrapper-right-column{
+    grid-area:right-column;
+}
+.wrapper-right-column img{
+    max-height:100vh;
+    height: 100vh;
+}
+
+
+/*----Styling Footer Column----*/
+
+footer{
+    position: absolute;
+    bottom:0;
+}
+
+@media only screen and (max-width:1100px){
+
+    body{
+        overflow-y:scroll;
+    }
+
+
+
+    .wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "top-row"
+        "mid-row"
+        "bottom-row";
+    }   
+
+/*----Styling right Column (ROW)----*/
+
+    .wrapper-right-column{
+        grid-area:mid-row;
+        }
+    
+    .wrapper-left-column{
+            grid-area:bottom-row;
+        }
+    
+    .wrapper-right-column img{
+            object-fit:cover;
+            max-height:100vh;
+            width:100%;
+    
+        }
+
+
+    /*----Styling Left Column (ROW)----*/    
+
+    .logo{
+        display:none;
+    }
+
+    .mobile-logo{
+        grid-area:top-row;
+        display:flex;
+        margin:2rem;
+    }
+
+    .main-text{
+        width:auto;
+    }
+
+    .main-text h1{
+        width:auto;
+        margin:3rem auto 3rem auto;
+        text-align:center;
+        font-size: 3rem;
+        
+    }
+
+    .main-text .main-article{
+        width:auto;
+        margin-left:auto;
+        margin-right:auto;
+        max-width:50%;
+    }
+
+    .main-text .email-form{
+        max-width:75%;
+        width: auto;
+    }
+  
+
+
+    .email-form{
+        margin-top:3rem;
+        margin-bottom:3rem;
+    }
+
+
+    /*----Styling Footer Column----*/
+
+    footer{
+    position: relative;
+    bottom:0;
+}
+}
